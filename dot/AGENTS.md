@@ -131,6 +131,37 @@
     HuggingFace dataset.
   - Refer to my personal doc collection to find existent artifacts like this.
 
+## Task
+
+Here is the procedure to follow when given any task in general.
+
+- Read the documentation of the project and make sure everything makes sense.
+  - Specifically, are there any assumptions made by the project?
+  - Are these assumptions still up-to-date?
+    - If external conditions have changed, do everything needed to update it
+      accordingly.
+
+- If there are invariants / assumptions made inside this project, make sure they
+  are all covered by test cases.
+  - Make sure test cases are as extensive and comprehensive as possible. Can
+    there be more tests? Is there any invariant currently not tested?
+  - Make sure tests all pass.
+
+- Randomly select some sample lines and take a look. Do they conform with your
+  expectations? If not, assume the problem is general and work on a global fix.
+
+- Read each README file one by one. Can any file be more concise? For example,
+  can some sentences or paragraphs be combined? Can some word choices be
+  streamlined? If so, improve it.
+
+- Read each program file one by one. Can any source code be more concise? For
+  example, can some functions be combined? Maybe some code is independently
+  written in more than one location. Find them and combine them so we avoid code
+  duplication.
+
+- Think whether the file directory structure still makes sense. If need be,
+  tentatively work on a redesign of the project and ask me for review.
+
 ## Misc
 
 - When writing anything in Chinese, only use traditional characters. Do not use
@@ -146,3 +177,7 @@
   locations, make sure the rankings across these locations are consistent.
 
 - When I refer to my personal code, it is usually stored under `~/llz`.
+
+- When I refer to any task instructions by a code name, that is usually in
+  `~/llz/doc/body/task/share/`. There you will find a markdown file named by the
+  code name, which is the instruction you are looking for.
