@@ -144,3 +144,5 @@
 - Preserve the ordering of list elements. Usually it should be from the most
   prominent to the least. If the same type of list elements occur in multiple
   locations, make sure the rankings across these locations are consistent.
+
+- When I refer to my personal code, it is usually stored under `~/llz`.
