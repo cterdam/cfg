@@ -131,7 +131,7 @@
     HuggingFace dataset.
   - Refer to my personal doc collection to find existent artifacts like this.
 
-## Task
+## Approach
 
 Here is the procedure to follow when given any task in general.
 
@@ -151,8 +151,9 @@ Here is the procedure to follow when given any task in general.
     there be more tests? Is there any invariant currently not tested?
   - Make sure tests all pass.
 
-- Randomly select some sample lines and take a look. Do they conform with your
-  expectations? If not, assume the problem is general and work on a global fix.
+- Randomly select some sample lines from some files and take a look. Do they
+  conform with your expectations? Can you find any problems or inconsistencies?
+  If so, assume the problem is general and work on a global fix.
 
 - Read each README file one by one. Can any file be more concise? For example,
   can some sentences or paragraphs be combined? Can some word choices be
