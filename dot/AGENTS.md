@@ -141,6 +141,10 @@ Here is the procedure to follow when given any task in general.
     - If external conditions have changed, do everything needed to update it
       accordingly.
 
+- Do your research to find whether there exists best practices or pre-built
+  solutions for the whole or part of the task. If something else is directly
+  reusable, use it instead of reinventing the wheel.
+
 - If there are invariants / assumptions made inside this project, make sure they
   are all covered by test cases.
   - Make sure test cases are as extensive and comprehensive as possible. Can
