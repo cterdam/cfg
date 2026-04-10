@@ -44,3 +44,11 @@ Host coc
     ControlPersist yes
 	ServerAliveInterval 30
 	ServerAliveCountMax 5
+
+Host capsule
+	Hostname mpl-ardent-strategy-15175.c.googlers.com
+	User corpagent-eng-cterdam
+  ControlMaster auto
+  ControlPath ~/.ssh/sockets/%C
+  ControlPersist 15h
+  ServerAliveInterval 30
