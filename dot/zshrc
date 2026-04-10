@@ -434,7 +434,7 @@ fi
 # SSH {{{
 
 # Add this device key to ssh-agent so it can be forwarded to remotes
-eval "$(ssh-agent -s)"
+eval "$(ssh-agent -s)" &> /dev/null
 ssh-add ~/.ssh/llz &> /dev/null
 
 # Make SSH ctrl path dir
