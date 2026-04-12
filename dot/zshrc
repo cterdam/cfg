@@ -7,9 +7,19 @@ export LLZHOME="$HOME/llz"
 # dir to hold dotfiles
 export LLZDOT="$LLZHOME/cfg/dot"
 
+# Func to symlink a dotfile to their default location
+linkfile() {
+    local src="$1" dst="$2"
+    mkdir -p "$(dirname "$dst")"
+    if [[ -f $src && ! -f $dst ]]; then
+        ln -s "$src" "$dst"
+    fi
+}
+
 # Dotfile src -> dst pairs
 LLZDOTPAIRS=(
     $LLZDOT/AGENTS.md         $HOME/.config/agents/AGENTS.md
+    $LLZDOT/AGENTS.md         $HOME/.openclaw/workspace/USER.md
     $LLZDOT/coc.json          $HOME/.config/nvim/coc-settings.json
     $LLZDOT/coc.json          $HOME/.vim/coc-settings.json
     $LLZDOT/gitconfig         $HOME/.gitconfig
@@ -23,15 +33,6 @@ LLZDOTPAIRS=(
     $LLZDOT/vimrc             $HOME/.vim/vimrc
     $LLZDOT/zshrc             $HOME/.zshrc
 )
-
-# Symlink a dotfile to their default location
-linkfile() {
-    local src="$1" dst="$2"
-    mkdir -p "$(dirname "$dst")"
-    if [[ -f $src && ! -f $dst ]]; then
-        ln -s "$src" "$dst"
-    fi
-}
 
 # Symlink all dotfile pairs
 for ((i=1; i<=${#LLZDOTPAIRS[@]}; i+=2)); do
@@ -56,7 +57,7 @@ if [[ -n $rimeloc ]]; then
     done
 fi
 
-# Clear link
+# Func to clear symlinks
 cleardotlinks() {
     for ((i=2; i<=${#LLZDOTPAIRS[@]}; i+=2)); do
         [[ -L ${LLZDOTPAIRS[$i]} ]] && rm ${LLZDOTPAIRS[$i]}
@@ -94,7 +95,7 @@ rc() {
         [rime]="$LLZDOT/rime"
     )
     if [[ $1 == -h ]]; then
-        echo "Available configs: vi(m), nv(im), coc, exe, git, zsh, p10k, tmux, rime, readme, gpg, ssh"
+        echo "Available configs: agent(s), vi(m), nv(im), coc, exe, git, zsh, p10k, tmux, rime, readme, gpg, ssh"
     elif [[ -n ${files[$1]+_} ]]; then
         $EDITOR ${files[$1]}
     elif [[ -n ${dirs[$1]+_} ]]; then

@@ -204,4 +204,3 @@ Here is the procedure to follow when given any task in general.
 
 - Think whether the file directory structure still makes sense. If need be,
   tentatively work on a redesign of the project and ask me for review.
-
