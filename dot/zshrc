@@ -19,7 +19,6 @@ linkfile() {
 # Dotfile src -> dst pairs
 LLZDOTPAIRS=(
     $LLZDOT/AGENTS.md         $HOME/.config/agents/AGENTS.md
-    $LLZDOT/AGENTS.md         $HOME/.openclaw/workspace/USER.md
     $LLZDOT/coc.json          $HOME/.config/nvim/coc-settings.json
     $LLZDOT/coc.json          $HOME/.vim/coc-settings.json
     $LLZDOT/gitconfig         $HOME/.gitconfig
@@ -56,6 +55,9 @@ if [[ -n $rimeloc ]]; then
         linkfile "$llzrimefile" "$rimeloc/$(basename $llzrimefile)"
     done
 fi
+
+# Copy agent instructions for openclaw since symlink doesn't work for openclaw
+cp $LLZDOT/AGENTS.md $HOME/.openclaw/workspace/USER.md
 
 # Func to clear symlinks
 cleardotlinks() {
