@@ -1,23 +1,46 @@
-# AGENTS.md
+# Instruction for Agents
+
+This document contains guidelines for our interaction and needs to be followed.
+
+## Communication
+
+- Skip the greetings and filler words like "Great question" and "Happy to help",
+  and just start on the task. In fact, be as concise as possible in our
+  communication.
+- You're allowed to have opinions and disagree with me. Support with evidence.
+- In general, don't ask for permission. Just find ways to do it.
+- When there is any blocker, be resourceful and try to figure it out before
+  asking. Read the file. Check the context. Search online to find out about
+  similar problems. Only then ask, if you're stuck. The goal is to come back
+  with answers, not questions.
 
 ## Documentation
 
-- When making changes, use a hierarchical approach to find and read all README
-  from the project root all the way down to the change level.
-  - For example, if a change is related to `repo/src/lib/code.py`, then you need
-    to first read any README you can find from `repo/README.md`,
+- When working with a repo, use a hierarchical approach to find and read all
+  README from the project root all the way down to the change level.
+  - For example, to work with a code segment from `repo/src/lib/code.py`, you
+    need to first read any README you can find from `repo/README.md`,
     `repo/src/README.md`, and `repo/src/lib/README.md`.
   - Child, granular README instructions override parental, global ones.
-  - If the README refers you to other resources to better understand the code,
-    read them too if needed.
+- When making changes and writing documentation, find the appropriate scope for
+  the change, and write it in the corresponding README.
+  - For example, if you made a change related to `repo/src/lib/code.py` and you
+    are documenting it, you need to decide whether the change should be
+    documented in `repo/README.md`, `repo/src/README.md`, or
+    `repo/src/lib/README.md`. Read these READMEs to figure out which one the new
+    change belongs.
+  - Usually, when you make changes, go with the most general (highest) level
+    possible and write documentations as such. Only when a change cannot be
+    generalized, write it and document it at a lower level.
 
-## Style
+## Conciseness
 
 - In general, when writing anything, be as concise as possible. The same outcome
   should be achieved with the shortest possible content. This stands for both
   programming code and documentation.
 
-- When naming anything in code, prefer succinct short names.
+- When naming anything in code, prefer short names. There are a few ways to
+  achieve this.
   - Prefer abbreviations. If there is a canonical abbreviation, use it instead
     of the full name. For example, `src` for source; `cfg` for config.
   - Prefer singular nouns. Do not use plurals unless absolutely necessary. For
@@ -32,31 +55,13 @@
     same level, notice that they have the same length which is nice. Given this,
     renaming `config` to the `cfg` abbreviation becomes optional.
 
-- Do not duplicate.
-  - When writing code, before starting, look at possible places to see whether
-    it is already written somewhere, and always reuse / improve on existent code
-    if possible.
-  - When writing documentation, if the same information is already captured
-    somewhere, include a pointer to it instead of writing the same information
-    again somewhere else.
-  - When adding things, always add at the highest level possible if it can be
-    reused at multiple locations.
-
-- Do not use brackets if possible. Brackets make reading order ambiguous. Often
-  what you would want to write in brackets can be written in full as its own
-  clause.
-
-- The top lind of each commit message should look like this: `[tag] short
-  one-liner`.
-  - For example: `[chess] support hexagonal board`.
-  - There could be multiple tags.
-
-- In general, for any markup language or programming language, as long as it is
-  code, find the most canonical / popular auto-formatter for the language and
-  use it on any file you touch.
-
-- Prefer writing lists over writing prose paragraphs. Each list item should be
-  basically a sentence that's as short as possible.
+- Avoid duplication, including the inadvertent kind.
+  - When writing code, before starting, look at all possible places to see
+    whether it is already written somewhere. If so, always reuse / improve on
+    existent code if possible.
+  - When writing documentation, before starting, look at all possible places to
+    see whether the information is already captured somewhere. If so, include a
+    pointer to it instead of writing the same information again.
 
 - When writing anything, answer the question: can it be generalized as much as
   possible? For example, if I find that for a particular list of documents,
@@ -66,26 +71,9 @@
   Whenever something can be generalized while still keeping the same local
   effect, prefer the global solution.
 
-- For yaml entries, use the `>` notation for any long string.
-
-- Treat the underscore `_` as the outer-most, primary substitute for whitespace
-  in file naming; only use the hyphen `-` if another layer is needed.
-
-## Test
-
-- When implementing any functionality that will live on in the repo and be
-  reused, write corresponding tests. Make sure the tests are comprehensive and
-  all pass. Write documentation about the tests.
-
-- In general, a repo should have a global `repo_root/test` folder containing all
-  tests. This way, the test files will not colocate with the files they test.
-
-- When writing anything, stop and ask: are you making any assumption about the
-  code or content? If so, make these invariants explicit and make them into a
-  test routine. For example, if I am creating a list of documents and I expect
-  all of them to be indexed by a certain field, I am making an assumption that
-  the field exists in all samples, and therefore a tests should make sure that
-  the field really exist in all samples.
+- Do not use brackets if possible. Brackets make reading order ambiguous. Often
+  what you would want to write in brackets can be written in full as its own
+  clause.
 
 ## Standard
 
@@ -105,9 +93,9 @@
   is also good that the code name is often shorter than the full name.
   - For example, if we were recording a list of entities where each entity is
     tied to a geographic location, depending on whether these locations are
-    contextualized culturally / politically or scientifically, we should use
-    either the ISO-3166 standards, or the longtitude and latitude to refer to
-    the locations.
+    contextualized politically or scientifically, we should use either the
+    ISO-3166 standards, or the longtitude and latitude to refer to the
+    locations.
     - So, "San Francisco, CA" would be referred to as `SFO` by its IATA metro
       area code. This is shorter and will not collide with, for example, "San
       Jose, Guatemala" which is `GSJ`.
@@ -115,8 +103,9 @@
     each is tied to a company, we could use the stock symbol of companies to
     refer to the companies.
 
-- When in a possibly relevant scenario, use extensive internet search and
-  consulting to find whether a standard exists.
+- If you find yourself working with any objective entities, if you haven't done
+  so already, stop and use extensive internet search and consulting to find
+  whether a standard exists for our subject. Adopt the standard.
 
 - When we secure a standard, it is often needed to make this standard into a
   synced artifact. Often this means saving it as dataset on a remote like
@@ -130,6 +119,55 @@
     names for major world cities, it is desirable to make this into a
     HuggingFace dataset.
   - Refer to my personal doc collection to find existent artifacts like this.
+
+## Test
+
+- When implementing any functionality that will live on in the repo and be
+  reused, write corresponding tests. Make sure the tests are comprehensive and
+  all pass. Follow repo conventions and write documentation about the tests.
+
+- When writing any code, stop and ask: are we making any implicit assumptions
+  about the code or content? If so, we need to realize it and make these
+  invariants explicit and encode them into a test routine.
+  - For example, if I am creating a list of documents and I expect all of them
+    to be indexed by a certain field, then I need to stop and realize I am
+    making an assumption that the field exists in all samples. Therefore, a
+    tests should make sure that the field really exist in all samples.
+
+## Misc
+
+- The top lind of each commit message should look like this: `[tag] short
+  one-liner`.
+  - For example: `[chess] support hexagonal board`.
+  - There could be multiple tags.
+
+- In general, for any markup language or programming language, as long as it is
+  code, before commiting, find the most canonical / popular auto-formatter for
+  the language and use it to format the file. This should be done on all
+  changes.
+  - For example, if you made changes to a python file, you should find with
+    internet search that `black` is a canonical formatter for it, and should
+    have used it to format the python file before commiting your changes.
+
+- Prefer writing lists over writing prose paragraphs. Each list item should be
+  basically a sentence that's as short as possible.
+
+- For yaml entries, use the `>` notation for any long string.
+
+- In file naming, treat the underscore `_` as the outer-most, primary substitute
+  for whitespace ; only use the hyphen `-` if another layer is needed.
+
+- When writing anything in Chinese, only use traditional characters. Do not use
+  any simplified characters at all. For transliterations, prefer mainland
+  Chinese variants over Hong Kong variants over Taiwan variants. But no matter
+  which one, always make sure to convert everything into traditional characters,
+  especially if it comes from mainland China.
+
+- Preserve the ordering of list elements. Usually it should be from the most
+  prominent to the least. If the same type of list elements occur in multiple
+  locations, make sure the rankings across these locations are consistent.
+
+- When I refer to my personal code, it is usually stored under `~/llz`.
 
 ## Approach
 
@@ -167,22 +205,3 @@ Here is the procedure to follow when given any task in general.
 - Think whether the file directory structure still makes sense. If need be,
   tentatively work on a redesign of the project and ask me for review.
 
-## Misc
-
-- When writing anything in Chinese, only use traditional characters. Do not use
-  any simplified characters at all. For transliterations of overseas concepts
-  where there might exist different versions of the same name depending on the
-  locale, prefer mainland Chinese variants over Hong Kong variants over Taiwan
-  variants. But no matter which one you choose, always make sure to convert
-  everything into traditional characters, especially if it comes from mainland
-  China.
-
-- Preserve the ordering of list elements. Usually it should be from the most
-  prominent to the least. If the same type of list elements occur in multiple
-  locations, make sure the rankings across these locations are consistent.
-
-- When I refer to my personal code, it is usually stored under `~/llz`.
-
-- When I refer to any task instructions by a code name, that is usually in
-  `~/llz/doc/body/task/share/`. There you will find a markdown file named by the
-  code name, which is the instruction you are looking for.
