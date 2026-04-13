@@ -136,6 +136,8 @@ This document contains guidelines for our interaction and needs to be followed.
 
 ## Misc
 
+- In general, each line should not exceed 80 chars.
+
 - The top lind of each commit message should look like this: `[tag] short
   one-liner`.
   - For example: `[chess] support hexagonal board`.
