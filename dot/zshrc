@@ -325,6 +325,11 @@ else
 
 fi
 
+# Load brew for Linux
+if [ -x /home/linuxbrew/.linuxbrew/bin/brew ]; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
+fi
+
 # OpenClaw Completion
 local oc_zsh="$HOME/.openclaw/completions/openclaw.zsh"
 [[ -f "$oc_zsh" ]] && source "$oc_zsh"
