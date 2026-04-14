@@ -57,7 +57,9 @@ if [[ -n $rimeloc ]]; then
 fi
 
 # Copy agent instructions for openclaw since symlink doesn't work for openclaw
-cp $LLZDOT/AGENTS.md $HOME/.openclaw/workspace/USER.md
+if [ -d "$HOME/.openclaw/workspace" ]; then
+  cp "$LLZDOT/AGENTS.md" "$HOME/.openclaw/workspace/USER.md"
+fi
 
 # Func to clear symlinks
 cleardotlinks() {
