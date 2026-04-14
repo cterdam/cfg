@@ -18,9 +18,9 @@ This document contains guidelines for our interaction and needs to be followed.
 
 - When working with a repo, use a hierarchical approach to find and read all
   README from the project root all the way down to the change level.
-  - For example, to work with a code segment from `repo/src/lib/code.py`, you
-    need to first read any README you can find from `repo/README.md`,
-    `repo/src/README.md`, and `repo/src/lib/README.md`.
+  - For example, to work with a file at `repo/src/lib/code.py`, you must first
+    read any README you can find from `repo/README.md`, `repo/src/README.md`,
+    and `repo/src/lib/README.md`.
   - Child, granular README instructions override parental, global ones.
 - When making changes and writing documentation, find the appropriate scope for
   the change, and write it in the corresponding README.
@@ -89,8 +89,8 @@ This document contains guidelines for our interaction and needs to be followed.
 
 - Therefore, when the collection of entities is well-defined, and there exists a
   common standard to refer to these entities by a code name, it is the best
-  practice to adopt that standard and refer to standards by their code name. It
-  is also good that the code name is often shorter than the full name.
+  practice to go out of our way to adopt that standard and refer to standards by
+  their code name.
   - For example, if we were recording a list of entities where each entity is
     tied to a geographic location, depending on whether these locations are
     contextualized politically or scientifically, we should use either the
@@ -104,8 +104,9 @@ This document contains guidelines for our interaction and needs to be followed.
     refer to the companies.
 
 - If you find yourself working with any objective entities, if you haven't done
-  so already, stop and use extensive internet search and consulting to find
-  whether a standard exists for our subject. Adopt the standard.
+  so already, stop and go the extra mile to use extensive internet search and
+  consulting to find whether a standard exists for our subject. Adopt the
+  standard.
 
 - When we secure a standard, it is often needed to make this standard into a
   synced artifact. Often this means saving it as dataset on a remote like
@@ -136,7 +137,10 @@ This document contains guidelines for our interaction and needs to be followed.
 
 ## Misc
 
-- In general, each line should not exceed 80 chars.
+- In general, each line should not exceed 80 chars. Use a tool to ensure that.
+
+- Before writing a file, look at its neighboring files from similar directories
+  to find the best practice. Follow the convention.
 
 - The top lind of each commit message should look like this: `[tag] short
   one-liner`.
@@ -169,7 +173,7 @@ This document contains guidelines for our interaction and needs to be followed.
   prominent to the least. If the same type of list elements occur in multiple
   locations, make sure the rankings across these locations are consistent.
 
-- When I refer to my personal code, it is usually stored under `~/llz`.
+- When I refer to anything you are unsure of, it is usually stored in `~/llz`.
 
 ## Approach
 
