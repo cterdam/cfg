@@ -142,6 +142,9 @@ This document contains guidelines for our interaction and needs to be followed.
 - Before writing a file, look at its neighboring files from similar directories
   to find the best practice. Follow the convention.
 
+- When renaming directory paths, search in the original repo any reference to
+  the original path that might appear in the source code and change them all.
+
 - The top lind of each commit message should look like this: `[tag] short
   one-liner`.
   - For example: `[chess] support hexagonal board`.
