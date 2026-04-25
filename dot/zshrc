@@ -521,6 +521,7 @@ if [ $(sysname) = "gLinx" ]; then
 
     # program shortcuts
     alias aclcheck='/google/bin/releases/ganpati-acls/tools/aclcheck'
+    alias beyond='/google/bin/releases/beyond/public/beyond.par'
     alias bkill='/google/data/ro/teams/borgtools/bkill'
     alias clhead='readlink /google/src/files/head'
     alias colab="/google/bin/releases/grp-ix-team/rapid/colab-cli/cli.par"
