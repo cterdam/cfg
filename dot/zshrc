@@ -528,6 +528,7 @@ if [ $(sysname) = "gLinx" ]; then
     alias er='/google/data/ro/users/ho/hooper/er'
     alias gemini='/google/bin/releases/gemini-cli/tools/gemini'
     alias hm='/google/bin/releases/heinzelmaennchen-team-policy/cli/hm'
+    alias lamda_cli='/google/bin/releases/lamda-team/tools/lamda_cli'
     alias legoml='/google/data/ro/teams/legoml/legoml'
     alias securemymodel='/google/bin/releases/airr-saif-data/securemymodel/securemymodel'
 
@@ -543,7 +544,7 @@ if [ $(sysname) = "gLinx" ]; then
     alias hgxl='hg xl'
     alias hgdf='hg diff'
     alias hgeu='hg evolve && hg ut'
-    alias hgss='hg submit && hg sync'
+    alias hgss='hg addremove; hg commit -m "housekeeping"; hg submit; hg sync'
 
     # Prepend CTERDAMBIN
     jetski_path="/Users/cterdam/.jetski/jetski/bin"
