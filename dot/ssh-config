@@ -48,7 +48,7 @@ Host coc
 Host capsule
 	Hostname mpl-ardent-strategy-15175.c.googlers.com
 	User corpagent-eng-cterdam
-  ControlMaster auto
-  ControlPath ~/.ssh/sockets/%C
-  ControlPersist 15h
-  ServerAliveInterval 30
+    ControlMaster auto
+    ControlPath ~/.ssh/sockets/%C
+    ControlPersist 15h
+    ServerAliveInterval 30
