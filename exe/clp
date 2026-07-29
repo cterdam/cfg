@@ -2,6 +2,7 @@
 
 tmux rename-window clp
 
-# Connect to the tmux session already running on the server.
-gcertstatus -nocheck_ssh -check_remaining=1h || gcert
-ssh clp -t -- /bin/bash -c "gcertstatus -nocheck_ssh -check_remaining=1h || gcert; tmx2 new-session -A -s gLinx"
+rw clp \
+  --remote_gcert_args='--nocorpssh --noprodssh --lifetime=168h' \
+  -t --tmux_session=gLinx \
+  --check_remaining
