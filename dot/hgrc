@@ -1,3 +1,6 @@
+[ui]
+ignore = ~/.hgignore
+
 [trainingwheels]
 warn-head-paths = False
 
