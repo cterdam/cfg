@@ -4,5 +4,4 @@ tmux rename-window clp
 
 rw clp \
   --remote_gcert_args='--nocorpssh --noprodssh --lifetime=168h' \
-  -t --tmux_session=gLinx \
-  --check_remaining
+  -t --tmux_session=gLinx
