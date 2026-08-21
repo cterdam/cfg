@@ -530,11 +530,9 @@ if [ $(sysname) = "gLinx" ]; then
     alias hgeu='hg evolve && hg ut'
     alias hgss='hg addremove; hg commit -m "housekeeping"; hg submit; hg sync'
 
-    # Prepend CTERDAMBIN
-    jetski_path="/Users/cterdam/.jetski/jetski/bin"
-    if ! inpath $jetski_path; then
-        addpath $jetski_path tail
-    fi
+    # Add jetski path
+    inpath /Users/cterdam/.jetski/jetski/bin || addpath /Users/cterdam/.jetski/jetski/bin tail
+    inpath /usr/local/google/home/cterdam/.local/bin || addpath /usr/local/google/home/cterdam/.local/bin  head
 
     # Fig integration -----------------------------------------------------------------
     # go/zsh-prompt#zsh-fig-prompt-fig-status-fig-prompt-and-powerlevel10k-custom-segment
